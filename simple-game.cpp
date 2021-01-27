@@ -18,7 +18,7 @@ void create_yem(){
 
         srand(time(NULL));
         y1.x = rand() % 39;
-        y1.y = rand() % 20;
+        y1.y = 1+rand() % 19;
     }
 void sleepcp(int milliseconds){
 
@@ -56,7 +56,8 @@ void print_coordinates(int x, int y){
 
                     cout << "|";
                     for (int i = 0; i < 40; i++) {
-                        if(i == x){
+                            if(x> y1.x){
+                                if(i == x){
                             cout << character;
                         }
                         if (i == y1.x) {
@@ -64,6 +65,18 @@ void print_coordinates(int x, int y){
                         } else {
                             cout << " ";
                         }
+                            }else{
+
+                        if (i == y1.x) {
+                            cout << "x";
+                        }
+                        if(i == x){
+                            cout << character;
+                        }else {
+                            cout << " ";
+                        }
+                            }
+
                     }
                     cout << "|" << endl;
                 }
